@@ -1,0 +1,22 @@
+<div *ngIf="selectedDate">
+  <h3>Time Slots for {{ selectedDate | date: 'fullDate' }}</h3>
+  <!-- Iterate over allTimeSlots grouped by username -->
+  <div *ngFor="let user of allTimeSlots | keyvalue">
+    <h4>{{ user.key }}</h4> <!-- Display the username -->
+    <div class="time-slot-dropdown">
+      <label for="timeSlotSelect-{{ user.key }}">Select a Time Slot:</label>
+      <select
+        id="timeSlotSelect-{{ user.key }}"
+        [ngModel]="selectedTimeSlots.get(user.key)"
+        (ngModelChange)="selectTimeSlot(user.key, $event)">
+        <option value="" disabled selected>Select a time slot</option>
+        <option
+          *ngFor="let slot of user.value"
+          [value]="slot"
+          [disabled]="isPastTimeSlot(slot)">
+          {{ slot }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>

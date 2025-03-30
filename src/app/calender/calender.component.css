@@ -1,0 +1,103 @@
+.calendar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 60%;
+  max-width: 50rem;
+  text-align: center;
+  padding: 1rem;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.calendar-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+  background-color: aliceblue;
+}
+
+.calendar-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 5px;
+}
+
+.day-name {
+  text-align: center;
+  padding: 5px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.day {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #eee;
+  cursor: pointer; /* Add cursor pointer to indicate clickable */
+}
+
+.day.today {
+  background-color: #e0f7fa;
+}
+
+.day.today.previous {
+  background-color: rgb(197, 224, 224);
+}
+
+.day.other-month {
+  color: #aaa;
+}
+
+.day.past {
+  color: #ccc; /* Gray out past day dates */
+}
+
+.day.selected {
+  background-color: #ffeb3b; /* Highlight selected date */
+}
+
+button {
+  display: flex;
+  gap: 0.5rem;
+  color: #7627bb;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  width: 10%;
+  text-align: center;
+  align-items: center;
+}
+
+.selected-date {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.time-slot-container {
+  width: 100%;
+  max-width: 1000%;
+  padding: 1rem;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
